@@ -11,7 +11,7 @@ export class FargoService {
 
     GetFargoRating(q: string): Promise<any> {
         return this.http
-            .get("http://dashboard-fr.azurewebsites.net/api/indexsearch?q=" + q)
+            .get("https://dashboard-fr.azurewebsites.net/api/indexsearch?q=" + q)
             .toPromise()
             .then(response => response.json() as any)
             .catch(this.handleError);
