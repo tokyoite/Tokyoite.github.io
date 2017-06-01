@@ -1,3 +1,111 @@
-<h1>
-  {{title}}
-</h1>
+<br/>
+<div class="container text-center">
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+            <img class="img-responsive" src="../assets/logotype.svg" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4">
+            <img class="img-responsive" src="../assets/usapllogotrans_small.png" />
+        </div>
+    </div>
+    <br />
+    <h1 class="text-center">{{title}}</h1>
+    <label class="lead">
+        {{instruction}}
+    </label>
+    <div class="row">
+        <div class="col-sm-12 form-inline">
+            <div class="col-xs-6 col-sm-5">
+                <md-input-container  style="width:100%;">
+                    <input [(ngModel)]="p1_text" mdInput placeholder="Player 1" [mdAutocomplete]="auto" (ngModelChange)="SearchName(p1_text, 0)">
+                </md-input-container>
+
+                <md-autocomplete #auto="mdAutocomplete" [displayWith]="displayFn" >
+                    <md-option *ngFor="let p of RatingResults[0]" [value]="p">
+                        <div (click)="SelectPlayer(p,0)">{{ p.firstName + ' ' + p.lastName  }} | <b>{{ p.rating}}</b></div>
+                    </md-option>
+                </md-autocomplete>
+                <table *ngIf="players[0] && players[1]" class="table table-responsive table-bordered table-hover">
+                    <tr>
+                        <td><label>Long</label></td>
+                        <td>
+                            <label>Race-To</label>: {{service.calculateRace(1.0, players[0].rating, players[1].rating).raceToOne}}<br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Short</label></td>
+                        <td>
+                            <label>Race-To</label>: {{service.calculateRace(.75, players[0].rating, players[1].rating).raceToOne}}<br />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="lead hidden-xs col-sm-2">
+                &nbsp;&nbsp;VS&nbsp;&nbsp;
+            </div>
+            <div class="col-xs-6 col-sm-5">
+                <md-input-container style="width:100%;">
+                    <input [(ngModel)]="p2_text" mdInput placeholder="Player 2" [mdAutocomplete]="auto2" (ngModelChange)="SearchName(p2_text, 1)">
+                </md-input-container>
+
+                <md-autocomplete #auto2="mdAutocomplete" [displayWith]="displayFn" style="width:500px;">
+                    <md-option *ngFor="let p of RatingResults[1]" [value]="p">
+                        <div (click)="SelectPlayer(p,1)">{{ p.firstName + ' ' + p.lastName  }} | <b>{{ p.rating}}</b></div>
+                    </md-option>
+                </md-autocomplete>
+                <table *ngIf="players[0] && players[1]" class="table table-responsive table-bordered table-hover">
+                    <tr>
+                        <td ><label>Long</label></td>
+                        <td>
+                            <label>Race-To</label>: {{service.calculateRace(1.0, players[0].rating, players[1].rating).raceToTwo}}<br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Short</label></td>
+                        <td>
+                            <label>Race-To</label>: {{service.calculateRace(.75, players[0].rating, players[1].rating).raceToTwo}}<br />
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <!--<div class="row">
+        <div class="col-sm-12">
+            <table class="table table-responsive table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>ReadableId</th>
+                        <th>First</th>
+                        <th>Last</th>
+                        <th>Location</th>
+                        <th>Rating</th>
+                        <th>Robustness</th>
+                        <th>Provisional Rating</th>
+                        <th>Membership #</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of results.value">
+                        <td>{{p.id}}</td>
+                        <td>{{p.readableId}}</td>
+                        <td>{{p.firstName}}</td>
+                        <td>{{p.lastName}}</td>
+                        <td>{{p.location}}</td>
+                        <td>{{p.rating}}</td>
+                        <td>{{p.robustness}}</td>
+                        <td>{{p.provisionalRating}}</td>
+                        <td>{{p.membershipNumber}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>-->
+</div>
+
+
