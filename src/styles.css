@@ -1,15 +1,15 @@
 body {
-    background-color: #000;
-    background-image: url(https://github.com/tokyoite/USAPL/blob/master/src/assets/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg?raw=true);
-    background-repeat: no-repeat;
+    background-color: #333 !important;
+    /*background-image: url(https://github.com/tokyoite/USAPL/blob/master/src/assets/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg?raw=true);*/
+    /*background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed;
-    webkit-background-size: cover;
+    background-attachment: fixed;*/
+    /*webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
+    background-size: cover;*/
 }
 
-.md-chips .md-chip-input-container md-autocomplete input {
-    width: 100%;
+.md-input-container {
+    color: #FFF;
 }
