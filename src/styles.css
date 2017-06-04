@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #000;
+    background-image: url(../src/assets/recycled_texture_background_by_sandeep_m-d6aeau9_PZ9chud.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.md-chips .md-chip-input-container md-autocomplete input {
+    width: 100%;
+}
