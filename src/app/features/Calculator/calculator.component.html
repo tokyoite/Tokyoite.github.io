@@ -9,7 +9,7 @@
             <div class="col-sm-12 form-inline">
                 <div class="col-sm-5">
                     <md-input-container style="width:100%;">
-                        <input [(ngModel)]="p1_text" mdInput placeholder="Player 1" [mdAutocomplete]="auto" (ngModelChange)="SearchName(p1_text, 0)">
+                        <input id="p1" [(ngModel)]="p1_text" mdInput placeholder="Player 1" [mdAutocomplete]="auto" (ngModelChange)="SearchName(p1_text, 0)">
                     </md-input-container>
 
                     <md-autocomplete #auto="mdAutocomplete" [displayWith]="displayFn">
@@ -57,7 +57,7 @@
                 </div>
                 <div class="col-sm-5">
                     <md-input-container style="width:100%;">
-                        <input [(ngModel)]="p2_text" mdInput placeholder="Player 2" [mdAutocomplete]="auto2" (ngModelChange)="SearchName(p2_text, 1)">
+                        <input id="p2" [(ngModel)]="p2_text" mdInput placeholder="Player 2" [mdAutocomplete]="auto2" (ngModelChange)="SearchName(p2_text, 1)">
                     </md-input-container>
 
                     <md-autocomplete #auto2="mdAutocomplete" [displayWith]="displayFn2" style="width:500px;">

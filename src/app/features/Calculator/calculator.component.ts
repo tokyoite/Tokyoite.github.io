@@ -6,6 +6,8 @@ import { FargoService } from './calculator.service';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 var component = null;
+declare var $: any;
+
 @Component({
     selector: 'race-calc',
     templateUrl: './calculator.component.html',
@@ -54,6 +56,9 @@ export class RaceCalculatorComponent {
     SelectPlayer(p, player) {
         this.players[player] = p;
         this.SetRace();
+        document.getElementById("p1").blur();
+        document.getElementById("p2").blur();
+
     }
 
     SetRace() {
