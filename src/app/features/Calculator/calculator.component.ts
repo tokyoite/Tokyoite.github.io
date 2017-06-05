@@ -56,8 +56,10 @@ export class RaceCalculatorComponent {
     SelectPlayer(p, player) {
         this.players[player] = p;
         this.SetRace();
-        document.getElementById("p1").blur();
-        document.getElementById("p2").blur();
+        setTimeout(function () {
+            document.getElementById("p1").blur();
+            document.getElementById("p2").blur();
+        },0)
 
     }
 
